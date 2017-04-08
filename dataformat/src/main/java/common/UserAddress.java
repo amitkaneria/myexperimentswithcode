@@ -1,9 +1,11 @@
 package common;
 
-public class User {
+import java.util.List;
 
+public class UserAddress {
     private String firstName;
     private String lastName;
+    private List<String> address;
 
     public String getFirstName() {
         return firstName;
@@ -21,11 +23,19 @@ public class User {
         this.lastName = lastName;
     }
 
+    public List<String> getAddress() {
+        return address;
+    }
+    public void setAddress(List<String> address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "UserAddress{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

@@ -5,21 +5,17 @@ import common.UserAddress;
 import common.UserUtil;
 import jackson.v1.factory.JacksonDataFormatFactory;
 
-public class JsonTest {
+public class XmlTest {
     public static void main(String[] args) {
-        ObjectMapper mapper = JacksonDataFormatFactory.objectMapper("json");
+        ObjectMapper mapper = JacksonDataFormatFactory.objectMapper("xml");
         try {
             UserAddress userAddress = UserUtil.getUserAddressInstance();
 
-            System.out.println("Write JSON ... ... ... ");
+            System.out.println("Write XML ... ... ... ");
             System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userAddress));
 
-            System.out.println("Read JSON ... ... ... ");
-            String userYaml = "{\n" +
-                    "  \"firstName\" : \"Amit\",\n" +
-                    "  \"lastName\" : \"Kaneria\",\n" +
-                    "  \"address\" : [ \"130 Laidlaw Ave\", \"Jersey City\", \"NJ 07307\" ]\n" +
-                    "}";
+            System.out.println("Read XML ... ... ... ");
+            String userYaml = "<UserAddress><firstName>Amit</firstName><lastName>Kaneria</lastName><address><address>130 Laidlaw Ave</address><address>Jersey City</address><address>NJ 07307</address></address></UserAddress>";
 
             UserAddress newUserAddress = mapper.readValue(userYaml, UserAddress.class);
             System.out.println(newUserAddress);

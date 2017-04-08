@@ -11,6 +11,7 @@
     <modules>
         <module>producer-consumer</module>
         <module>dataformat</module>
+        <module>utilities</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
